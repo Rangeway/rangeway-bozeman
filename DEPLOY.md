@@ -13,14 +13,26 @@ to the `deploy-dist` branch; the VPS pulls that branch on a timer and rsyncs it 
 `/var/www/rangeway-bozeman/`. No build step. Meta files (`.git`, `README.md`, `CLAUDE.md`,
 `CNAME`, `DEPLOY.md`, dotfiles) are excluded from what's published.
 
-## First-time server setup (not yet done)
-This repo ships the workflow, but the VPS side still needs to be provisioned to match Mojave:
-1. Create `/var/www/rangeway-bozeman/` and an Nginx server block for
-   `rangewaybozeman.com www.rangewaybozeman.com`.
-2. Add the repo to the VPS deploy timer that pulls the `deploy-dist` branch.
-3. Issue a Let's Encrypt cert (certbot).
-4. DNS at Cloudflare, **DNS-only (grey cloud)**: A records `rangewaybozeman.com` + `www`
-   → `72.60.71.39`.
+## Server setup (done 2026-06-14)
+The VPS is provisioned to match Mojave:
+1. `/var/www/rangeway-bozeman/` exists, owned by `deploy:deploy`.
+2. Nginx server block `/etc/nginx/sites-available/rangeway-bozeman` (enabled) for
+   `rangewaybozeman.com www.rangewaybozeman.com`, includes `snippets/rangeway-static.conf`.
+3. `rangeway-bozeman /var/www/rangeway-bozeman` added to `/etc/rangeway-deploy.conf`
+   (the `rangeway-deploy.timer` pulls the `deploy-dist` branch every 2 min).
+4. Let's Encrypt cert issued (certbot --nginx), with HTTP→HTTPS redirect.
+5. DNS at Cloudflare, DNS-only: A records `rangewaybozeman.com` + `www` → `72.60.71.39`.
+
+**Auto-deploy requires the GitHub repo to be public.** The VPS pull-deploy clones over
+unauthenticated HTTPS (same as every other Rangeway site repo). While the repo is private the
+2-min timer cannot fetch it; deploy manually with:
+```bash
+rsync -az --delete \
+  --exclude='.git' --exclude='.github' --exclude='.claude' --exclude='.DS_Store' \
+  --exclude='CLAUDE.md' --exclude='README.md' --exclude='.gitignore' \
+  --exclude='.gitattributes' --exclude='CNAME' --exclude='DEPLOY.md' \
+  ./ rangeway-vps:/var/www/rangeway-bozeman/ && ssh rangeway-vps 'chown -R deploy:deploy /var/www/rangeway-bozeman'
+```
 
 ## Local development
 Plain static HTML/CSS/JS, no build.
