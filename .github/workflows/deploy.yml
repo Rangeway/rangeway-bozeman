@@ -1,0 +1,41 @@
+name: Publish for VPS pull-deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-belgrade
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The VPS polls the deploy-dist branch and rsyncs it into
+      # /var/www/rangeway-belgrade (rangeway-deploy timer on the server).
+      # CI never connects to the VPS: Hostinger's network edge intermittently
+      # drops inbound connections from GitHub's shared runner IP ranges, so
+      # push-based SSH deploys were randomly failing. Mirrors rangeway-mojave.
+      - name: Publish site to deploy-dist branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rsync -a --delete \
+            --exclude='.git' --exclude='.github' --exclude='.claude' \
+            --exclude='.DS_Store' --exclude='CLAUDE.md' --exclude='README.md' \
+            --exclude='.gitignore' --exclude='.gitattributes' --exclude='CNAME' --exclude='DEPLOY.md' \
+            ./ /tmp/site-dist/
+          cd /tmp/site-dist
+          git init -q -b deploy-dist
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "deploy ${GITHUB_SHA}"
+          git push -q --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" deploy-dist
