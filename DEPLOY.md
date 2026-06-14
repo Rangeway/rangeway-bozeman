@@ -40,10 +40,10 @@ Plain static HTML/CSS/JS, no build.
 python3 -m http.server 8000   # http://localhost:8000
 ```
 
-## Before launch — required edits
-- **Social:** confirm the Bluesky handle in `index.html` (currently a best-guess placeholder).
-- **Images:** add real golden-hour photography (see `images/README.md`) and an OG/social
-  card at `images/og-cover.jpg` (referenced by Open Graph / Twitter meta tags).
+## Before launch — nice to have
+- **Images:** add a Montana-appropriate hero and a dedicated 1200×630 OG/social card at
+  `images/og-cover.jpg`, then point the `og:image`/`twitter:image` tags back to it (they
+  currently reuse `hero-bozeman.jpg`). See `images/README.md`.
 
 The "Stay in the loop" section links out to Field Notes (`fieldnotes.rangeway.co`), matching
 the Mojave microsite. There is no on-page email form and no backend or newsletter keys.
