@@ -1,14 +1,14 @@
 # Images
 
-The site currently ships with **no photography**. The hero uses a designed golden-hour CSS
-gradient and the location section uses an inline SVG map, so the page looks complete without
-any image files. Drop real assets here before launch for the strongest result.
-
-## Recommended assets to add
+## Current
 | File | Used by | Notes |
 |------|---------|-------|
-| `hero-bozeman.jpg` | Hero background | Golden-hour, regional Montana character, warmth. Show a charging canopy at dusk with amber glow, or indoor lounge comfort. Provide a WebP + `srcset`. To enable, uncomment the `.hero__media` block in `index.html`. |
-| `og-cover.jpg` | Open Graph / Twitter card | 1200×630. Referenced by the social meta tags in `index.html`. Until added, link previews will have no image. |
+| `hero-bozeman.jpg` | Hero background + OG/Twitter card | The Basecamp Phase II vision render, pulled from `rangeway-pages` (`basecamp-hero.jpg`). 1024×1024, ~320KB. Golden-hour aerial of a Basecamp with solar canopy, lounge, and mountains. Reads slightly desert (cacti); swap for a Montana-appropriate shot when available. |
+
+## Recommended follow-ups
+- **Optimize the hero:** export a WebP + responsive `srcset` (the current file is a 1MP JPEG).
+- **Dedicated OG card:** 1200×630 at `images/og-cover.jpg`, then point the `og:image` /
+  `twitter:image` meta tags back to it (they currently use `hero-bozeman.jpg`).
 
 ## Brand / content guardrails for imagery
 - Golden-hour light, warmth, premium materials, people relaxed while vehicles charge.

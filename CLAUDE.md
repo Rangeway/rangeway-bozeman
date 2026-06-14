@@ -26,11 +26,14 @@ Static HTML/CSS/JS, no build. Serve locally with `python3 -m http.server 8000`.
 - No em dashes. No sentences starting with "And". Complete sentences only. No hashtags.
 - "driver's lounge" lowercase. "hotel operators," never "hoteliers". "drivers"/"guests," not "customers".
 - No partner/vendor/lender names (Red Canyon Roasting Company is the only allowed name, and only
-  for the future Basecamp cafe). No financials, capital, or investor language.
+  for the future Basecamp cafe).
+- Climatize raise IS on the site (the `#invest` section, the "Invest" nav link / hero CTA, and the
+  footer securities disclosure), mirroring the Mojave page. Keep the offering copy general (no
+  dollar figures); the live numbers live on Climatize. Do not strip this when editing.
 - No off-grid / "100% solar" claims (this site is grid-connected with solar support).
 - No Yellowstone National Park / Big Sky / national-park framing. No kW/battery/uptime specs.
 - No "Lite"/"budget" framing. No "Summit" phase.
 
 ## Deploy
 Push to `main` → GitHub Actions publishes to `deploy-dist` → VPS pulls. See `DEPLOY.md`.
-Pre-launch TODOs (Bluesky handle, real images) are listed in `DEPLOY.md`.
+Pre-launch TODOs (Bluesky handle, more/optimized images) are listed in `DEPLOY.md`.
