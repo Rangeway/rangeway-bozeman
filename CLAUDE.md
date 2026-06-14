@@ -1,15 +1,14 @@
-# CLAUDE.md — rangeway-belgrade
+# CLAUDE.md — rangeway-bozeman
 
-Single-page marketing microsite for **Rangeway Bozeman** (domain: rangewaybelgrade.com).
+Single-page marketing microsite for **Rangeway Bozeman** (domain: rangewaybozeman.com).
 Part of the Rangeway multi-repo workspace; shares the Rangeway brand system and is modeled
 structurally on the rangeway-mojave microsite.
 
 ## Naming (important)
-- Public-facing brand name is **"Bozeman"** for name recognition.
+- Repo, domain, and public-facing brand name are all **Bozeman** (rangewaybozeman.com).
 - The actual town is **Belgrade** (where the airport, the I-90 Exit 299 interchange, and the
   site sit). Use "Belgrade" only where it is geographically precise (the location section).
-- The repo and domain are **Belgrade**; never present the page as "Rangeway Belgrade" in
-  headlines or SEO.
+  Never present the page as "Rangeway Belgrade" in headlines or SEO.
 
 ## Stack
 Static HTML/CSS/JS, no build. Serve locally with `python3 -m http.server 8000`.

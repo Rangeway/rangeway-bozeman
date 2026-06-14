@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-belgrade
+  group: deploy-bozeman
   cancel-in-progress: true
 
 permissions:
@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
 
       # The VPS polls the deploy-dist branch and rsyncs it into
-      # /var/www/rangeway-belgrade (rangeway-deploy timer on the server).
+      # /var/www/rangeway-bozeman (rangeway-deploy timer on the server).
       # CI never connects to the VPS: Hostinger's network edge intermittently
       # drops inbound connections from GitHub's shared runner IP ranges, so
       # push-based SSH deploys were randomly failing. Mirrors rangeway-mojave.

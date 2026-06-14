@@ -1,25 +1,25 @@
-# Deploy & Ops — rangeway-belgrade (rangewaybelgrade.com)
+# Deploy & Ops — rangeway-bozeman (rangewaybozeman.com)
 
-The Rangeway Bozeman microsite. The public-facing brand name is **Bozeman** (for name
-recognition); the actual town is **Belgrade**, used only where geographically precise (the
-I-90 Exit 299 interchange and the airport area). The repo and domain are Belgrade.
+The Rangeway Bozeman microsite. Repo, domain, and public-facing name are all **Bozeman**;
+the actual town is **Belgrade**, mentioned only where geographically precise (the I-90 Exit 299
+interchange and the airport area).
 
-Intended to be **self-hosted on the Hostinger VPS** (`72.60.71.39`, Nginx + Let's Encrypt),
-the same pattern as rangeway-mojave. Served from `/var/www/rangeway-belgrade/`.
+**Self-hosted on the Hostinger VPS** (`72.60.71.39`, Nginx + Let's Encrypt), the same pattern as
+rangeway-mojave. Served from `/var/www/rangeway-bozeman/`.
 
 ## How to deploy
 **Push to `main`.** GitHub Actions (`.github/workflows/deploy.yml`) publishes the static files
 to the `deploy-dist` branch; the VPS pulls that branch on a timer and rsyncs it into
-`/var/www/rangeway-belgrade/`. No build step. Meta files (`.git`, `README.md`, `CLAUDE.md`,
+`/var/www/rangeway-bozeman/`. No build step. Meta files (`.git`, `README.md`, `CLAUDE.md`,
 `CNAME`, `DEPLOY.md`, dotfiles) are excluded from what's published.
 
 ## First-time server setup (not yet done)
 This repo ships the workflow, but the VPS side still needs to be provisioned to match Mojave:
-1. Create `/var/www/rangeway-belgrade/` and an Nginx server block for
-   `rangewaybelgrade.com www.rangewaybelgrade.com`.
+1. Create `/var/www/rangeway-bozeman/` and an Nginx server block for
+   `rangewaybozeman.com www.rangewaybozeman.com`.
 2. Add the repo to the VPS deploy timer that pulls the `deploy-dist` branch.
 3. Issue a Let's Encrypt cert (certbot).
-4. DNS at Cloudflare, **DNS-only (grey cloud)**: A records `rangewaybelgrade.com` + `www`
+4. DNS at Cloudflare, **DNS-only (grey cloud)**: A records `rangewaybozeman.com` + `www`
    → `72.60.71.39`.
 
 ## Local development
