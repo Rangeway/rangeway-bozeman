@@ -25,8 +25,8 @@ Static HTML/CSS/JS, no build. Serve locally with `python3 -m http.server 8000`.
 ## Voice rules (enforce on any copy change)
 - No em dashes. No sentences starting with "And". Complete sentences only. No hashtags.
 - "driver's lounge" lowercase. "hotel operators," never "hoteliers". "drivers"/"guests," not "customers".
-- No partner/vendor/lender names (Red Canyon Roasting Company is the only allowed name, and only
-  for the future Basecamp cafe).
+- The only partner names allowed are the four build partners shown in the `#partners` section:
+  Electric Era, LouTeq, Pebble, and Rivian. Do not introduce any other partner/vendor/lender names.
 - Climatize raise IS on the site (the `#invest` section, the "Invest" nav link / hero CTA, and the
   footer securities disclosure), mirroring the Mojave page. Keep the offering copy general (no
   dollar figures); the live numbers live on Climatize. Do not strip this when editing.

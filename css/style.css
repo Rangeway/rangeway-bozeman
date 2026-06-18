@@ -713,6 +713,17 @@ section { position: relative; }
   .hero__media img { object-position: center center; }
 }
 
+/* Lighter scrim on desktop so the photo reads through; mobile keeps the
+   stronger overlay for legibility over the tighter portrait crop. */
+@media (min-width: 721px) {
+  .hero__scrim {
+    background:
+      linear-gradient(120deg, rgba(17, 13, 12, 0.62) 0%, rgba(17, 13, 12, 0.28) 55%, rgba(17, 13, 12, 0.52) 100%),
+      linear-gradient(0deg, rgba(17, 13, 12, 0.42) 0%, transparent 45%),
+      rgba(17, 13, 12, 0.08);
+  }
+}
+
 /* =============== The Promise =============== */
 
 .promise__heading {
@@ -780,6 +791,141 @@ section { position: relative; }
 
 @media (max-width: 880px) {
   .promise-cards { grid-template-columns: 1fr; }
+}
+
+/* =============== Partners =============== */
+
+.partners__heading {
+  max-width: 820px;
+  margin-bottom: var(--space-8);
+}
+
+.partners__heading h2 { margin-bottom: 0; }
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+.partner-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--dur-med) var(--ease-standard),
+    border-color var(--dur-med) var(--ease-standard),
+    box-shadow var(--dur-med) var(--ease-standard);
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244, 168, 85, 0.4);
+  box-shadow: var(--shadow);
+}
+
+.partner-card__logo {
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.partner-card__logo img {
+  max-height: 100%;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+/* Recolor a pale transparent logo (Pebble) to solid black while keeping
+   its transparency, so it reads as strongly as the darker partner marks. */
+.partner-card__logo-mono {
+  filter: brightness(0);
+}
+
+.partner-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: var(--ls-tight);
+}
+
+.partner-card__role {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-warm-deep);
+}
+
+.partner-card__desc {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.partner-card__link {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-warm-deep);
+  text-decoration: none;
+  transition: gap var(--dur-med) var(--ease-standard),
+    color var(--dur-med) var(--ease-standard);
+}
+
+.partner-card__link:hover {
+  gap: var(--space-3);
+  color: var(--color-warm);
+}
+
+@media (max-width: 880px) {
+  .partners-grid { grid-template-columns: 1fr; }
+}
+
+/* =============== Invest reminder band =============== */
+
+.invest-band {
+  background: linear-gradient(135deg, rgba(244, 168, 85, 0.16), rgba(244, 168, 85, 0.05));
+  padding: clamp(48px, 6vw, 80px) 0;
+}
+
+.invest-band__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.invest-band__copy {
+  max-width: 62ch;
+}
+
+.invest-band__copy h2 { margin: 0 0 var(--space-3); }
+
+.invest-band__copy p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.invest-band .btn { flex-shrink: 0; }
+
+@media (max-width: 720px) {
+  .invest-band__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 /* =============== Where we are (location + map) =============== */
