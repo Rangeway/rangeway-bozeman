@@ -846,6 +846,16 @@ section { position: relative; }
   filter: brightness(0);
 }
 
+/* In dark mode the cards turn near-black, so the dark monochrome logos
+   would vanish. Flip them to white silhouettes; Rivian's colored mark
+   already reads on dark and is left untouched. */
+@media (prefers-color-scheme: dark) {
+  .partner-card__logo-mono,
+  .partner-card__logo-adapt {
+    filter: brightness(0) invert(1);
+  }
+}
+
 .partner-card h3 {
   margin: 0;
   font-size: 1.4rem;
