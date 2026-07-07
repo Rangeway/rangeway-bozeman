@@ -1,71 +1,80 @@
-// Rangeway Bozeman. Minimal site JS.
+// Rangeway Bozeman. Field-guide microsite JS.
 (function () {
   // Footer year
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  // Sticky nav state
-  var wrap = document.querySelector(".nav-wrap");
-  if (wrap) {
-    var onScroll = function () {
-      if (window.scrollY > 40) {
-        wrap.classList.add("is-scrolled");
-      } else {
-        wrap.classList.remove("is-scrolled");
-      }
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-  }
-
-  // Mobile menu toggle
-  var toggle = document.querySelector("[data-toggle]");
-  var mobile = document.querySelector("[data-mobile]");
-  if (toggle && mobile) {
+  // Mobile menu overlay
+  var toggle = document.querySelector("[data-rail-toggle]");
+  var menu = document.querySelector("[data-rail-menu]");
+  if (toggle && menu) {
     var setOpen = function (open) {
-      mobile.hidden = !open;
+      menu.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", String(open));
       document.body.style.overflow = open ? "hidden" : "";
     };
 
     toggle.addEventListener("click", function (e) {
       e.stopPropagation();
-      setOpen(mobile.hidden);
+      setOpen(!menu.classList.contains("is-open"));
     });
 
-    document.addEventListener("click", function (e) {
-      if (mobile.hidden) return;
-      if (!mobile.contains(e.target) && !toggle.contains(e.target)) {
-        setOpen(false);
-      }
+    menu.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { setOpen(false); });
     });
 
-    mobile.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () { setOpen(false); });
+    // Close when clicking the scrim (the overlay itself, not the panel)
+    menu.addEventListener("click", function (e) {
+      if (e.target === menu) setOpen(false);
     });
 
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && !mobile.hidden) setOpen(false);
+      if (e.key === "Escape") setOpen(false);
     });
   }
 
-  // Reveal-on-scroll
-  if ("IntersectionObserver" in window) {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var canAnimate = !reduce && "IntersectionObserver" in window;
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll("[data-reveal]");
+  if (!canAnimate) {
+    reveals.forEach(function (el) { el.classList.add("rw-in"); });
+  } else {
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            entry.target.classList.add("rw-in");
             io.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -50px 0px" }
     );
-    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
-  } else {
-    document.querySelectorAll(".reveal").forEach(function (el) {
-      el.classList.add("is-visible");
-    });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+
+  // Rail active-section highlight (scroll spy). Marks exactly one link.
+  var links = Array.prototype.slice.call(document.querySelectorAll("[data-rail-link]"));
+  var sections = links
+    .map(function (l) { return document.getElementById(l.getAttribute("href").slice(1)); })
+    .filter(Boolean);
+
+  if (sections.length) {
+    var spy = function () {
+      var line = window.innerHeight * 0.34;
+      var current = sections[0];
+      sections.forEach(function (s) {
+        if (s.getBoundingClientRect().top <= line) current = s;
+      });
+      var id = "#" + current.id;
+      links.forEach(function (l) {
+        l.classList.toggle("rw-active", l.getAttribute("href") === id);
+      });
+    };
+    spy();
+    window.addEventListener("scroll", spy, { passive: true });
+    window.addEventListener("resize", spy);
   }
 })();
