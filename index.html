@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f1eb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17140f" media="(prefers-color-scheme: dark)" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/images/og-cover.jpg" />
 
   <title>Rangeway Bozeman. Premium EV Charging in Bozeman, Montana.</title>
   <meta name="description" content="Premium EV charging meets luxury hospitality at the I-90 Exit 299 interchange, next to Bozeman Yellowstone International Airport. A climate-controlled mobile lounge, ultra-fast charging, and great coffee. Opening soon." />
@@ -13,7 +16,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Rangeway Bozeman. Premium EV Charging in Bozeman, Montana." />
   <meta property="og:description" content="Premium EV charging meets luxury hospitality near Bozeman Yellowstone International Airport. A climate-controlled mobile lounge, ultra-fast charging, and great coffee. Opening soon." />
-  <meta property="og:image" content="https://rangewaybozeman.com/images/hero-bozeman.png" />
+  <meta property="og:image" content="https://rangewaybozeman.com/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://rangewaybozeman.com" />
   <meta property="og:site_name" content="Rangeway" />
 
@@ -21,16 +26,69 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rangeway Bozeman. Premium EV Charging in Bozeman, Montana." />
   <meta name="twitter:description" content="Premium EV charging meets luxury hospitality near Bozeman Yellowstone International Airport, with a climate-controlled mobile lounge." />
-  <meta name="twitter:image" content="https://rangewaybozeman.com/images/hero-bozeman.png" />
+  <meta name="twitter:image" content="https://rangewaybozeman.com/images/og-cover.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800;900&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
   />
 
-  <link rel="stylesheet" href="/css/style.css?v=19" />
+  <link rel="stylesheet" href="/css/style.css?v=20" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://rangeway.co/#organization",
+        "name": "Rangeway Energy, Inc.",
+        "url": "https://rangeway.co",
+        "logo": "https://rangewaybozeman.com/images/logo/rangeway-lockup-charcoal.svg",
+        "sameAs": [
+          "https://x.com/RangewayEV",
+          "https://instagram.com/RangewayEV",
+          "https://www.linkedin.com/company/rangewayenergy",
+          "https://bsky.app/profile/rangeway.co"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rangewaybozeman.com/#website",
+        "url": "https://rangewaybozeman.com",
+        "name": "Rangeway Bozeman",
+        "description": "Premium EV charging meets luxury hospitality at the I-90 Exit 299 interchange near Bozeman Yellowstone International Airport.",
+        "publisher": { "@id": "https://rangeway.co/#organization" }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://rangewaybozeman.com/#location",
+        "name": "Rangeway Bozeman",
+        "description": "Premium EV charging plaza with a climate-controlled mobile lounge, ultra-fast charging, coffee, and food. Opening soon at the I-90 Exit 299 interchange in Belgrade, Montana.",
+        "url": "https://rangewaybozeman.com",
+        "image": "https://rangewaybozeman.com/images/og-cover.jpg",
+        "parentOrganization": { "@id": "https://rangeway.co/#organization" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Belgrade",
+          "addressRegion": "MT",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 45.7772,
+          "longitude": -111.1833
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Bozeman, Montana"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -59,7 +117,7 @@
           <div class="rail__readout-row"><dt>Region</dt><dd>Belgrade, MT</dd></div>
           <div class="rail__readout-row"><dt>Status</dt><dd class="rail__status"><span class="rail__status-dot" aria-hidden="true"></span>Opening soon</dd></div>
         </dl>
-        <a class="btn btn-warm" href="#invest" style="width:100%;min-height:46px;padding:11px 20px;font-size:.94rem;box-shadow:0 12px 30px rgba(244,168,85,.24);">
+        <a class="btn btn-warm rail__cta" href="#invest">
           Invest in Bozeman
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12" />
@@ -69,7 +127,7 @@
       </div>
 
       <button class="rail__toggle" data-rail-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <line x1="3" y1="7" x2="21" y2="7" />
           <line x1="3" y1="12" x2="21" y2="12" />
           <line x1="3" y1="17" x2="21" y2="17" />
@@ -82,8 +140,8 @@
       <span id="top"></span>
 
       <!-- Mobile menu overlay -->
-      <div class="menu" id="mobile-menu" data-rail-menu>
-        <div class="menu__panel">
+      <div class="menu" id="mobile-menu" data-rail-menu hidden>
+        <div class="menu__panel" role="dialog" aria-modal="true" aria-label="Site menu">
           <a class="menu__link" href="#promise"><span>01</span>The Promise</a>
           <a class="menu__link" href="#experience"><span>02</span>The Experience</a>
           <a class="menu__link" href="#location"><span>03</span>The Location</a>
@@ -106,7 +164,7 @@
               <div class="hero__ctas">
                 <a class="btn btn-warm" href="#invest">
                   Invest in Bozeman
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" /></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" /></svg>
                 </a>
                 <a class="btn btn-ghost" href="#updates">Opening updates</a>
               </div>
@@ -118,7 +176,24 @@
       <!-- HERO PLATE -->
       <figure class="plate-figure" data-reveal>
         <div class="plate">
-          <img src="/images/hero-bozeman.png" alt="A Rangeway location at dusk, its lounge glowing through the glass facade while a vehicle charges under the timber canopy, sunset-lit mountains beyond" fetchpriority="high" />
+          <picture>
+            <source type="image/webp" media="(max-width: 720px)" srcset="/images/hero-bozeman-mobile.webp" />
+            <source type="image/jpeg" media="(max-width: 720px)" srcset="/images/hero-bozeman-mobile.jpg" />
+            <source type="image/webp" srcset="/images/hero-bozeman.webp" />
+            <img
+              src="/images/hero-bozeman.jpg"
+              alt="A Rangeway location at dusk, its lounge glowing through the glass facade while a vehicle charges under the timber canopy, sunset-lit mountains beyond"
+              width="1599"
+              height="900"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+          <div class="plate__cap" aria-hidden="true">
+            <span class="lead">Plate I</span>
+            <span class="sep">&middot;</span>
+            <span>Waystation at dusk</span>
+          </div>
         </div>
       </figure>
 
@@ -166,7 +241,7 @@
           <div class="exp__row">
             <div class="exp__num" aria-hidden="true">01</div>
             <h3>Eight ultra-fast charging ports</h3>
-            <p>Eight ultra-fast charging ports, designed for a quick, reliable charge so you spend your time inside, not watching a screen.</p>
+            <p>Designed for a quick, reliable charge so you spend your time inside, not watching a screen.</p>
           </div>
           <div class="exp__row">
             <div class="exp__num" aria-hidden="true">02</div>
@@ -205,7 +280,10 @@
                 </ul>
               </div>
               <figure class="map-plate">
-                <img src="/images/location-map.jpg" alt="Satellite map of the Rangeway Bozeman site at the I-90 Exit 299 interchange in Belgrade, with Bozeman Yellowstone International Airport nearby" loading="lazy" width="1200" height="900" />
+                <picture>
+                  <source type="image/webp" srcset="/images/location-map.webp" />
+                  <img src="/images/location-map.jpg" alt="Satellite map of the Rangeway Bozeman site at the I-90 Exit 299 interchange in Belgrade, with Bozeman Yellowstone International Airport nearby" loading="lazy" width="1200" height="800" decoding="async" />
+                </picture>
                 <span class="map-plate__badge">Plate II &middot; Survey</span>
                 <figcaption class="map-plate__cap">The I-90 Exit 299 interchange, next to Bozeman Yellowstone International Airport.</figcaption>
               </figure>
@@ -225,10 +303,25 @@
                 <h2 class="section-h2 becoming__h2">Built to become more.</h2>
                 <p class="becoming__lead">Rangeway Bozeman opens as a premium charging plaza with a mobile lounge and great coffee and food.</p>
                 <p class="becoming__follow">It is designed to grow into a full Basecamp, a staffed destination with an expanded lounge and an on-site cafe. This is the first step on the trail, not the last.</p>
+                <div class="trail">
+                  <div class="trail__step">
+                    <p class="trail__label">Now</p>
+                    <p class="trail__title">Premium charging plaza</p>
+                    <p class="trail__body">Mobile lounge, eight ultra-fast ports, solar-supported canopies, coffee and food on site.</p>
+                  </div>
+                  <div class="trail__step">
+                    <p class="trail__label">Next</p>
+                    <p class="trail__title">Full Basecamp</p>
+                    <p class="trail__body">Staffed destination with an expanded lounge and an on-site cafe.</p>
+                  </div>
+                </div>
               </div>
               <figure class="becoming__plate">
                 <div class="plate">
-                  <img src="/images/whats-coming.png" alt="The Rangeway Bozeman plaza at dusk: a mobile lounge and food truck beside the solar canopy and ultra-fast chargers, with people seated and mountains beyond" loading="lazy" width="1564" height="1006" />
+                  <picture>
+                    <source type="image/webp" srcset="/images/whats-coming.webp" />
+                    <img src="/images/whats-coming.jpg" alt="The Rangeway Bozeman plaza at dusk: a mobile lounge and food truck beside the solar canopy and ultra-fast chargers, with people seated and mountains beyond" loading="lazy" width="1564" height="1006" decoding="async" />
+                  </picture>
                 </div>
               </figure>
             </div>
@@ -267,46 +360,46 @@
 
             <div class="partners__table">
               <article class="partner-row" data-reveal>
-                <div class="partner-logo"><img src="/images/partners/electric-era-trans.png" alt="Electric Era" loading="lazy" /></div>
+                <div class="partner-logo"><img src="/images/partners/electric-era-trans.png" alt="Electric Era" loading="lazy" width="400" height="275" decoding="async" /></div>
                 <div>
                   <div class="partner-row__head"><h3>Electric Era</h3><span class="partner-role">Charging and storage</span></div>
                   <p>Electric Era's new RetailEdge dispensers power charging at the plaza, backed by on-site battery storage that keeps every session quick and reliable.</p>
                 </div>
-                <a class="partner-arrow" href="https://electricera.tech" target="_blank" rel="noopener" aria-label="Visit Electric Era">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
+                <a class="partner-arrow" href="https://electricera.tech" target="_blank" rel="noopener noreferrer" aria-label="Visit Electric Era">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
                 </a>
               </article>
 
               <article class="partner-row" data-reveal>
-                <div class="partner-logo"><img src="/images/partners/louteq.png" alt="LouTeq" loading="lazy" /></div>
+                <div class="partner-logo"><img src="/images/partners/louteq.png" alt="LouTeq" loading="lazy" width="400" height="128" decoding="async" /></div>
                 <div>
                   <div class="partner-row__head"><h3>LouTeq</h3><span class="partner-role">Structures</span></div>
                   <p>LouTeq designs and builds the canopies and structures that shelter the plaza, giving the site durable, design-forward architecture.</p>
                 </div>
-                <a class="partner-arrow" href="https://louteq.com" target="_blank" rel="noopener" aria-label="Visit LouTeq">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
+                <a class="partner-arrow" href="https://louteq.com" target="_blank" rel="noopener noreferrer" aria-label="Visit LouTeq">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
                 </a>
               </article>
 
               <article class="partner-row" data-reveal>
-                <div class="partner-logo partner-logo--sm partner-logo--mono"><img src="/images/partners/pebble-trans.png" alt="Pebble" loading="lazy" /></div>
+                <div class="partner-logo partner-logo--sm partner-logo--mono"><img src="/images/partners/pebble-trans.png" alt="Pebble" loading="lazy" width="400" height="266" decoding="async" /></div>
                 <div>
                   <div class="partner-row__head"><h3>Pebble</h3><span class="partner-role">Driver's lounge</span></div>
                   <p>Pebble provides the mobile driver's lounge, a climate-controlled space where drivers and guests can relax while they charge.</p>
                 </div>
-                <a class="partner-arrow" href="https://pebblelife.com" target="_blank" rel="noopener" aria-label="Visit Pebble">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
+                <a class="partner-arrow" href="https://pebblelife.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Pebble">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
                 </a>
               </article>
 
               <article class="partner-row" data-reveal>
-                <div class="partner-logo partner-logo--xs"><img src="/images/partners/rivian.png" alt="Rivian" loading="lazy" /></div>
+                <div class="partner-logo partner-logo--xs"><img src="/images/partners/rivian.png" alt="Rivian" loading="lazy" width="280" height="272" decoding="async" /></div>
                 <div>
-                  <div class="partner-row__head"><h3>Rivian</h3><span class="partner-role">Food and coffee</span></div>
+                  <div class="partner-row__head"><h3>Rivian</h3><span class="partner-role">Plaza food truck</span></div>
                   <p>Rivian provides the electric food truck on the plaza, run by a local operator serving fresh food and coffee on site.</p>
                 </div>
-                <a class="partner-arrow" href="https://rivian.com" target="_blank" rel="noopener" aria-label="Visit Rivian">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
+                <a class="partner-arrow" href="https://rivian.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Rivian">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
                 </a>
               </article>
             </div>
@@ -314,7 +407,7 @@
         </div>
       </section>
 
-      <!-- INVEST — the one dark moment -->
+      <!-- INVEST: the one dark moment -->
       <section class="invest" id="invest">
         <div class="invest__inner" data-reveal>
           <p class="invest__eyebrow">Now raising on Climatize</p>
@@ -324,10 +417,11 @@
               <p class="invest__body">Rangeway is raising capital on Climatize to build Rangeway Bozeman. The campaign is open to everyone, not just accredited investors. Anyone can invest in Rangeway Bozeman alongside the people building it, starting at the campaign minimum.</p>
             </div>
             <div class="invest__cta">
-              <a class="btn btn-warm" href="https://climatize.earth" target="_blank" rel="noopener">
+              <a class="btn btn-warm" href="https://climatize.earth" target="_blank" rel="noopener noreferrer">
                 Invest in Bozeman
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" /></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" /></svg>
               </a>
+              <p class="invest__note">Opens on Climatize. Full offering details and risk factors are on the platform.</p>
               <p class="invest__contact">Questions about the raise? <a href="mailto:info@rangewaybozeman.com">info@rangewaybozeman.com</a></p>
             </div>
           </div>
@@ -344,11 +438,11 @@
           <div>
             <p class="updates__body">Field Notes is our newsletter, with construction milestones, opening news, and how the network is growing. We send no marketing fluff, only progress updates and the occasional big-sky photo.</p>
             <div class="updates__ctas">
-              <a class="btn btn-warm" href="https://fieldnotes.rangeway.co" target="_blank" rel="noopener">
+              <a class="btn btn-warm" href="https://fieldnotes.rangeway.co" target="_blank" rel="noopener noreferrer">
                 Subscribe to Field Notes
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" /></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="13 6 19 12 13 18" /></svg>
               </a>
-              <a class="btn btn-ghost" href="https://rangeway.co" target="_blank" rel="noopener">Back to Rangeway</a>
+              <a class="btn btn-ghost" href="https://rangeway.co" target="_blank" rel="noopener noreferrer">Back to Rangeway</a>
             </div>
           </div>
         </div>
@@ -358,7 +452,7 @@
       <footer class="footer pad">
         <div class="footer__top">
           <div class="footer__brand">
-            <a href="https://rangeway.co" target="_blank" rel="noopener" aria-label="Rangeway">
+            <a href="https://rangeway.co" target="_blank" rel="noopener noreferrer" aria-label="Rangeway">
               <img class="logo-light" src="/images/logo/rangeway-lockup-charcoal.svg" alt="Rangeway" width="210" height="56" />
               <img class="logo-dark" src="/images/logo/rangeway-lockup-white.svg" alt="Rangeway" width="210" height="56" />
             </a>
@@ -368,25 +462,25 @@
             <div>
               <h3>Explore</h3>
               <ul>
-                <li><a href="https://rangeway.co" target="_blank" rel="noopener">Rangeway</a></li>
-                <li><a href="https://rangeway.co/our-story" target="_blank" rel="noopener">Our Story</a></li>
-                <li><a href="https://rangeway.co/network" target="_blank" rel="noopener">The Network</a></li>
+                <li><a href="https://rangeway.co" target="_blank" rel="noopener noreferrer">Rangeway</a></li>
+                <li><a href="https://rangeway.co/our-story" target="_blank" rel="noopener noreferrer">Our Story</a></li>
+                <li><a href="https://rangeway.co/network" target="_blank" rel="noopener noreferrer">The Network</a></li>
               </ul>
             </div>
             <div>
               <h3>Follow along</h3>
               <ul>
-                <li><a href="https://fieldnotes.rangeway.co" target="_blank" rel="noopener">Field Notes</a></li>
-                <li><a href="https://newsroom.rangeway.co" target="_blank" rel="noopener">Newsroom</a></li>
+                <li><a href="https://fieldnotes.rangeway.co" target="_blank" rel="noopener noreferrer">Field Notes</a></li>
+                <li><a href="https://newsroom.rangeway.co" target="_blank" rel="noopener noreferrer">Newsroom</a></li>
               </ul>
             </div>
             <div>
               <h3>Social</h3>
               <ul>
-                <li><a href="https://x.com/RangewayEV" target="_blank" rel="noopener">X</a></li>
-                <li><a href="https://instagram.com/RangewayEV" target="_blank" rel="noopener">Instagram</a></li>
-                <li><a href="https://www.linkedin.com/company/rangewayenergy" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://bsky.app/profile/rangeway.co" target="_blank" rel="noopener">Bluesky</a></li>
+                <li><a href="https://x.com/RangewayEV" target="_blank" rel="noopener noreferrer">X</a></li>
+                <li><a href="https://instagram.com/RangewayEV" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/company/rangewayenergy" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://bsky.app/profile/rangeway.co" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
               </ul>
             </div>
           </div>
@@ -395,19 +489,19 @@
         <div class="footer__legal">
           <p>&copy; <span id="year">2026</span> Rangeway Energy, Inc. All rights reserved.</p>
           <p>
-            <a href="https://rangeway.co/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+            <a href="https://rangeway.co/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
             <span class="sep" aria-hidden="true">&middot;</span>
-            <a href="https://rangeway.co/terms" target="_blank" rel="noopener">Terms of Service</a>
+            <a href="https://rangeway.co/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>
           </p>
         </div>
 
         <p class="footer__disclosure">
-          Rangeway Energy, Inc. is raising capital on <a href="https://climatize.earth" target="_blank" rel="noopener">Climatize</a> to fund Rangeway Bozeman, a location in the Rangeway network. This communication is for informational purposes only and is not an offer to sell, nor a solicitation of an offer to buy, any security. Offers may only be made through the Climatize platform. Visit <a href="https://climatize.earth" target="_blank" rel="noopener">climatize.earth</a> for the full offering details, including risk factors. Investing involves risk, including possible loss of principal.
+          Rangeway Energy, Inc. is raising capital on <a href="https://climatize.earth" target="_blank" rel="noopener noreferrer">Climatize</a> to fund Rangeway Bozeman, a location in the Rangeway network. This communication is for informational purposes only and is not an offer to sell, nor a solicitation of an offer to buy, any security. Offers may only be made through the Climatize platform. Visit <a href="https://climatize.earth" target="_blank" rel="noopener noreferrer">climatize.earth</a> for the full offering details, including risk factors. Investing involves risk, including possible loss of principal.
         </p>
       </footer>
     </main>
   </div>
 
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js?v=20"></script>
 </body>
 </html>

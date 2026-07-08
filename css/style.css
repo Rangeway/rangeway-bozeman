@@ -277,6 +277,14 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   flex-shrink: 0;
 }
 
+.rail__cta {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 20px;
+  font-size: 0.94rem;
+  box-shadow: 0 12px 30px rgba(244, 168, 85, 0.24);
+}
+
 /* =============== Buttons =============== */
 
 .btn {
@@ -485,6 +493,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   object-fit: cover;
   object-position: center 60%;
 }
+.plate picture { display: block; }
 .plate__cap {
   position: absolute;
   left: 0;
@@ -502,6 +511,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(251, 247, 241, 0.9);
+  pointer-events: none;
 }
 .plate__cap .lead { color: #f7c27a; }
 .plate__cap .sep { opacity: 0.5; }
@@ -610,6 +620,11 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
    line up. Only in the two-column layout; mobile keeps the map's 4/3 ratio. */
 @media (min-width: 721px) {
   .loc__cols .map-plate { height: 100%; display: flex; flex-direction: column; }
+  .loc__cols .map-plate picture {
+    flex: 1 1 auto;
+    min-height: 300px;
+    display: block;
+  }
   .loc__cols .map-plate img { height: 100%; aspect-ratio: auto; min-height: 300px; }
 }
 .loc__body {
@@ -649,7 +664,8 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   border: 1px solid var(--rw-line);
   box-shadow: 0 24px 70px rgba(24, 18, 14, 0.16);
 }
-.map-plate img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.map-plate picture { display: block; height: 100%; }
+.map-plate img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
 .map-plate__badge {
   position: absolute;
   top: 14px;
@@ -705,6 +721,47 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   line-height: 1.72;
   color: var(--rw-body);
   max-width: 60ch;
+}
+
+.trail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: clamp(28px, 4vw, 40px);
+  border-top: 1.5px solid var(--rw-line-strong);
+}
+.trail__step {
+  padding: 22px 20px 0 0;
+  border-right: 1px solid var(--rw-line-soft);
+}
+.trail__step:last-child {
+  padding-left: 20px;
+  padding-right: 0;
+  border-right: 0;
+}
+.trail__label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rw-accent);
+  margin-bottom: 10px;
+}
+.trail__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.14rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--rw-ink);
+  margin-bottom: 8px;
+}
+.trail__body {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--rw-body);
+  max-width: 28ch;
 }
 
 .becoming__plate { margin: 0; }
@@ -878,6 +935,12 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
 .invest__body { color: rgba(245, 241, 235, 0.82); font-size: 1.2rem; line-height: 1.65; max-width: 56ch; }
 .invest__cta { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
 .invest__cta .btn-warm { min-height: 54px; padding: 16px 32px; font-size: 1.08rem; box-shadow: 0 16px 40px rgba(244, 168, 85, 0.28); }
+.invest__note {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(245, 241, 235, 0.55);
+  max-width: 36ch;
+}
 .invest__contact { font-size: 0.96rem; color: rgba(245, 241, 235, 0.66); }
 .invest__contact a {
   color: #f4a855;
@@ -1040,6 +1103,16 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   .ledger__item { padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--rw-line-soft); }
   .ledger__item:last-child { border-bottom: 0; }
   .exp__row { grid-template-columns: 1fr; gap: 14px; }
+  .trail { grid-template-columns: 1fr; }
+  .trail__step {
+    padding: 18px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--rw-line-soft);
+  }
+  .trail__step:last-child {
+    padding-left: 0;
+    border-bottom: 0;
+  }
   .partner-row { grid-template-columns: 1fr; gap: 8px; padding: 26px 0; }
   .partner-logo { justify-content: flex-start; }
   .footer__cols { grid-template-columns: 1fr 1fr; }

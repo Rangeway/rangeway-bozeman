@@ -36,4 +36,4 @@ Static HTML/CSS/JS, no build. Serve locally with `python3 -m http.server 8000`.
 
 ## Deploy
 Push to `main` → GitHub Actions publishes to `deploy-dist` → VPS pulls. See `DEPLOY.md`.
-Pre-launch TODOs (Bluesky handle, more/optimized images) are listed in `DEPLOY.md`.
+Image inventory and deploy notes are in `images/README.md` and `DEPLOY.md`.

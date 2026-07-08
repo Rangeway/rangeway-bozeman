@@ -40,10 +40,8 @@ Plain static HTML/CSS/JS, no build.
 python3 -m http.server 8000   # http://localhost:8000
 ```
 
-## Before launch — nice to have
-- **Images:** add a Montana-appropriate hero and a dedicated 1200×630 OG/social card at
-  `images/og-cover.jpg`, then point the `og:image`/`twitter:image` tags back to it (they
-  currently reuse `hero-bozeman.jpg`). See `images/README.md`.
-
-The "Stay in the loop" section links out to Field Notes (`fieldnotes.rangeway.co`), matching
-the Mojave microsite. There is no on-page email form and no backend or newsletter keys.
+## Notes
+- CSS/JS cache-bust with `?v=N` on `index.html` asset links when shipping style or script changes.
+- Social preview uses `images/og-cover.jpg` (1200×630). Hero art is WebP + JPEG via `<picture>`.
+- Invest CTAs point at `https://climatize.earth` until a campaign-specific URL exists; then deep-link.
+- Field Notes (`fieldnotes.rangeway.co`) is the newsletter destination. No on-page email form.
