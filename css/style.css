@@ -1100,11 +1100,32 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   transition: background 0.2s ease;
 }
 .partner-row:hover { background: linear-gradient(90deg, rgba(244, 168, 85, 0.04), transparent); }
-.partner-logo { display: flex; align-items: center; height: 40px; opacity: 0.92; }
-.partner-logo img { max-height: 34px; max-width: 130px; object-fit: contain; object-position: left center; }
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+  width: 100%;
+  max-width: 140px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  opacity: 0.92;
+}
+.partner-logo img {
+  max-height: 34px;
+  max-width: 130px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}
 .partner-logo--sm img { max-height: 30px; }
 .partner-logo--xs img { max-height: 28px; }
-.partner-logo--mono img { filter: brightness(0); }
+/* Ink marks (dark wordmarks) flatten to charcoal in light mode */
+.partner-logo--mono img,
+.partner-logo--ink img { filter: brightness(0); opacity: 0.88; }
 .partner-row__head {
   display: flex;
   align-items: baseline;
@@ -1312,13 +1333,15 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   .rail { background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)); }
   .rail__toggle { background: rgba(255, 255, 255, 0.06); border-color: rgba(242, 237, 228, 0.2); }
 
-  .partner-logo {
-    background: #f3ede3;
-    border-radius: 6px;
-    padding: 7px 12px;
-    align-self: flex-start;
-    width: fit-content;
-    height: auto;
+  /* No cream pills: invert ink logos to cream; leave brand-color marks alone */
+  .partner-logo--mono img,
+  .partner-logo--ink img {
+    filter: brightness(0) invert(1);
+    opacity: 0.88;
+  }
+  .partner-logo--color img {
+    filter: none;
+    opacity: 0.95;
   }
   .plate--book {
     box-shadow:
