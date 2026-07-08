@@ -35,7 +35,7 @@
     href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
   />
 
-  <link rel="stylesheet" href="/css/style.css?v=20" />
+  <link rel="stylesheet" href="/css/style.css?v=21" />
 
   <script type="application/ld+json">
   {
@@ -135,6 +135,15 @@
       </button>
     </aside>
 
+    <!-- Mobile place strip: keeps Exit 299 / status when the rail collapses -->
+    <div class="mobile-readout" aria-label="Site facts">
+      <span>I-90 Exit 299</span>
+      <span class="mobile-readout__sep" aria-hidden="true">&middot;</span>
+      <span>Belgrade, MT</span>
+      <span class="mobile-readout__sep" aria-hidden="true">&middot;</span>
+      <span class="mobile-readout__status"><span class="rail__status-dot" aria-hidden="true"></span>Opening soon</span>
+    </div>
+
     <!-- ================== MAIN COLUMN ================== -->
     <main class="main" id="main" data-main>
       <span id="top"></span>
@@ -155,6 +164,13 @@
       <!-- HERO -->
       <header class="hero pad">
         <div class="hero__wrap">
+          <p class="hero__place" data-reveal>
+            <span>Belgrade, Montana</span>
+            <span class="hero__place-sep" aria-hidden="true">&middot;</span>
+            <span>I-90 Exit 299</span>
+            <span class="hero__place-sep" aria-hidden="true">&middot;</span>
+            <span>Next to BZN airport</span>
+          </p>
           <h1 class="hero__title" data-reveal>Premium charging is coming to <span class="hero__accent">Bozeman</span>.</h1>
 
           <div class="hero__cols">
@@ -175,25 +191,32 @@
 
       <!-- HERO PLATE -->
       <figure class="plate-figure" data-reveal>
-        <div class="plate">
+        <div class="plate plate--book">
           <picture>
             <source type="image/webp" media="(max-width: 720px)" srcset="/images/hero-bozeman-mobile.webp" />
             <source type="image/jpeg" media="(max-width: 720px)" srcset="/images/hero-bozeman-mobile.jpg" />
             <source type="image/webp" srcset="/images/hero-bozeman.webp" />
             <img
               src="/images/hero-bozeman.jpg"
-              alt="A Rangeway location at dusk, its lounge glowing through the glass facade while a vehicle charges under the timber canopy, sunset-lit mountains beyond"
+              alt="Rangeway Bozeman concept at dusk in the Gallatin Valley: lounge glowing under a timber canopy, a vehicle charging, open Montana sky and distant ranges beyond"
               width="1599"
               height="900"
               fetchpriority="high"
               decoding="async"
             />
           </picture>
-          <div class="plate__cap" aria-hidden="true">
+          <div class="plate__cap">
             <span class="lead">Plate I</span>
-            <span class="sep">&middot;</span>
-            <span>Waystation at dusk</span>
+            <span class="sep" aria-hidden="true">&middot;</span>
+            <span>Rangeway Bozeman &middot; Gallatin Valley</span>
           </div>
+          <a class="plate__inset" href="#location">
+            <picture>
+              <source type="image/webp" srcset="/images/location-map.webp" />
+              <img src="/images/location-map.jpg" alt="" width="320" height="214" loading="lazy" decoding="async" />
+            </picture>
+            <span class="plate__inset-label">Plate II &middot; Survey</span>
+          </a>
         </div>
       </figure>
 
@@ -237,6 +260,29 @@
               <p class="exp__lead">Pull in, plug in, and step inside. While your vehicle charges on one of eight ultra-fast charging ports, you settle into a mobile lounge built the way a hospitality operator designs a space, with thoughtful lighting, comfortable seating, and good coffee. The charging happens around a place built for the people waiting, not in a lot built for the car.</p>
             </div>
 
+            <ol class="visit" aria-label="A stop at Rangeway Bozeman">
+              <li class="visit__step">
+                <span class="visit__num" aria-hidden="true">01</span>
+                <span class="visit__title">Arrive</span>
+                <span class="visit__body">Easy on from I-90 Exit 299, next to the airport.</span>
+              </li>
+              <li class="visit__step">
+                <span class="visit__num" aria-hidden="true">02</span>
+                <span class="visit__title">Plug in</span>
+                <span class="visit__body">One of eight ultra-fast ports under solar-supported canopies.</span>
+              </li>
+              <li class="visit__step">
+                <span class="visit__num" aria-hidden="true">03</span>
+                <span class="visit__title">Step inside</span>
+                <span class="visit__body">Climate-controlled mobile lounge, coffee, and food.</span>
+              </li>
+              <li class="visit__step">
+                <span class="visit__num" aria-hidden="true">04</span>
+                <span class="visit__title">Leave ready</span>
+                <span class="visit__body">Back on the road with a stop that felt like a break.</span>
+              </li>
+            </ol>
+
             <div class="exp__ledger">
           <div class="exp__row">
             <div class="exp__num" aria-hidden="true">01</div>
@@ -270,6 +316,25 @@
           <div>
             <p class="eyebrow">The Location</p>
             <h2 class="section-h2 loc__h2">Right where the journey needs it.</h2>
+            <ol class="route" aria-label="How to reach Rangeway Bozeman">
+              <li class="route__stop">
+                <span class="route__mark" aria-hidden="true">A</span>
+                <span class="route__name">Airport</span>
+                <span class="route__meta">BZN</span>
+              </li>
+              <li class="route__leg" aria-hidden="true"><span class="route__line"></span></li>
+              <li class="route__stop">
+                <span class="route__mark" aria-hidden="true">B</span>
+                <span class="route__name">Exit 299</span>
+                <span class="route__meta">I-90</span>
+              </li>
+              <li class="route__leg" aria-hidden="true"><span class="route__line"></span></li>
+              <li class="route__stop route__stop--end">
+                <span class="route__mark" aria-hidden="true">C</span>
+                <span class="route__name">Rangeway</span>
+                <span class="route__meta">Plaza</span>
+              </li>
+            </ol>
             <div class="loc__cols">
               <div>
                 <p class="loc__body">The location sits at the I-90 Exit 299 interchange in Belgrade, next door to Bozeman Yellowstone International Airport, one of the busiest and fastest-growing airports in the region. The Bozeman area is among the fastest-growing communities in Montana, and reliable fast charging here has been hard to find. We are changing that.</p>
@@ -279,13 +344,13 @@
                   <li><span>03</span>Easy on, easy off</li>
                 </ul>
               </div>
-              <figure class="map-plate">
+              <figure class="map-plate plate--book">
                 <picture>
                   <source type="image/webp" srcset="/images/location-map.webp" />
                   <img src="/images/location-map.jpg" alt="Satellite map of the Rangeway Bozeman site at the I-90 Exit 299 interchange in Belgrade, with Bozeman Yellowstone International Airport nearby" loading="lazy" width="1200" height="800" decoding="async" />
                 </picture>
                 <span class="map-plate__badge">Plate II &middot; Survey</span>
-                <figcaption class="map-plate__cap">The I-90 Exit 299 interchange, next to Bozeman Yellowstone International Airport.</figcaption>
+                <figcaption class="map-plate__cap">I-90 Exit 299, Belgrade &middot; next to Bozeman Yellowstone International Airport.</figcaption>
               </figure>
             </div>
           </div>
@@ -317,11 +382,16 @@
                 </div>
               </div>
               <figure class="becoming__plate">
-                <div class="plate">
+                <div class="plate plate--book">
                   <picture>
                     <source type="image/webp" srcset="/images/whats-coming.webp" />
                     <img src="/images/whats-coming.jpg" alt="The Rangeway Bozeman plaza at dusk: a mobile lounge and food truck beside the solar canopy and ultra-fast chargers, with people seated and mountains beyond" loading="lazy" width="1564" height="1006" decoding="async" />
                   </picture>
+                  <div class="plate__cap">
+                    <span class="lead">Plate III</span>
+                    <span class="sep" aria-hidden="true">&middot;</span>
+                    <span>Plaza, opening chapter</span>
+                  </div>
                 </div>
               </figure>
             </div>
@@ -356,14 +426,14 @@
           <div class="partners__body">
             <p class="eyebrow">The Partners</p>
             <h2 class="section-h2 partners__h2">The team behind Rangeway Bozeman.</h2>
-            <p class="partners__lead">We bring in best-in-class partners for every part of the experience.</p>
+            <p class="partners__lead">Colophon for the plaza. Best-in-class partners for charging, structure, lounge, and food.</p>
 
-            <div class="partners__table">
+            <div class="partners__table partners__table--colophon">
               <article class="partner-row" data-reveal>
                 <div class="partner-logo"><img src="/images/partners/electric-era-trans.png" alt="Electric Era" loading="lazy" width="400" height="275" decoding="async" /></div>
                 <div>
                   <div class="partner-row__head"><h3>Electric Era</h3><span class="partner-role">Charging and storage</span></div>
-                  <p>Electric Era's new RetailEdge dispensers power charging at the plaza, backed by on-site battery storage that keeps every session quick and reliable.</p>
+                  <p>RetailEdge dispensers and on-site battery storage for quick, reliable sessions.</p>
                 </div>
                 <a class="partner-arrow" href="https://electricera.tech" target="_blank" rel="noopener noreferrer" aria-label="Visit Electric Era">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
@@ -374,7 +444,7 @@
                 <div class="partner-logo"><img src="/images/partners/louteq.png" alt="LouTeq" loading="lazy" width="400" height="128" decoding="async" /></div>
                 <div>
                   <div class="partner-row__head"><h3>LouTeq</h3><span class="partner-role">Structures</span></div>
-                  <p>LouTeq designs and builds the canopies and structures that shelter the plaza, giving the site durable, design-forward architecture.</p>
+                  <p>Canopies and plaza structures with durable, design-forward architecture.</p>
                 </div>
                 <a class="partner-arrow" href="https://louteq.com" target="_blank" rel="noopener noreferrer" aria-label="Visit LouTeq">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
@@ -385,7 +455,7 @@
                 <div class="partner-logo partner-logo--sm partner-logo--mono"><img src="/images/partners/pebble-trans.png" alt="Pebble" loading="lazy" width="400" height="266" decoding="async" /></div>
                 <div>
                   <div class="partner-row__head"><h3>Pebble</h3><span class="partner-role">Driver's lounge</span></div>
-                  <p>Pebble provides the mobile driver's lounge, a climate-controlled space where drivers and guests can relax while they charge.</p>
+                  <p>Mobile driver's lounge where drivers and guests can relax while they charge.</p>
                 </div>
                 <a class="partner-arrow" href="https://pebblelife.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Pebble">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
@@ -396,7 +466,7 @@
                 <div class="partner-logo partner-logo--xs"><img src="/images/partners/rivian.png" alt="Rivian" loading="lazy" width="280" height="272" decoding="async" /></div>
                 <div>
                   <div class="partner-row__head"><h3>Rivian</h3><span class="partner-role">Plaza food truck</span></div>
-                  <p>Rivian provides the electric food truck on the plaza, run by a local operator serving fresh food and coffee on site.</p>
+                  <p>Electric food truck on the plaza, run by a local operator.</p>
                 </div>
                 <a class="partner-arrow" href="https://rivian.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Rivian">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7" /><polyline points="7 7 17 7 17 17" /></svg>
@@ -502,6 +572,6 @@
     </main>
   </div>
 
-  <script src="/js/main.js?v=20"></script>
+  <script src="/js/main.js?v=21"></script>
 </body>
 </html>
