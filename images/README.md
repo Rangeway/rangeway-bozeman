@@ -3,7 +3,7 @@
 ## Current
 | File | Used by | Notes |
 |------|---------|-------|
-| `hero-bozeman.webp` / `.jpg` | Hero plate (desktop) | Gallatin Valley concept, ~1600×900. WebP primary via `<picture>`, JPEG fallback. |
+| `hero-bozeman.webp` / `.jpg` | Hero plate (desktop) | Landscape, ~1600×900. WebP primary via `<picture>`, JPEG fallback. |
 | `hero-bozeman-mobile.webp` / `.jpg` | Hero plate (≤720px) | Portrait crop. Served via `<picture>` `<source media>`. |
 | `whats-coming.webp` / `.jpg` | What's Coming plate | ~1564×1006. WebP + JPEG fallback. |
 | `location-map.webp` / `.jpg` | Location survey plate | 1200×800. |
