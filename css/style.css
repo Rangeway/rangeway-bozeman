@@ -1083,7 +1083,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
 }
 .partners__table { border-top: 1.5px solid var(--rw-line-strong); }
 .partners__table--colophon .partner-row {
-  grid-template-columns: 140px 1fr auto;
+  grid-template-columns: 168px 1fr auto;
   gap: clamp(16px, 3vw, 36px);
   padding: 22px 0;
 }
@@ -1104,9 +1104,9 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 40px;
+  height: 56px;
   width: 100%;
-  max-width: 140px;
+  max-width: 168px;
   margin: 0;
   padding: 0;
   background: none;
@@ -1114,15 +1114,15 @@ button { font-family: inherit; cursor: pointer; border: 0; background: transpare
   opacity: 0.92;
 }
 .partner-logo img {
-  max-height: 34px;
-  max-width: 130px;
+  max-height: 48px;
+  max-width: 160px;
   width: auto;
   height: auto;
   object-fit: contain;
   object-position: left center;
 }
-.partner-logo--sm img { max-height: 30px; }
-.partner-logo--xs img { max-height: 28px; }
+/* Wide wordmarks (LouTeq) stay a touch smaller so they don't dominate */
+.partner-logo--sm img { max-height: 36px; max-width: 150px; }
 /* Ink marks (dark wordmarks) flatten to charcoal in light mode */
 .partner-logo--mono img,
 .partner-logo--ink img { filter: brightness(0); opacity: 0.88; }
